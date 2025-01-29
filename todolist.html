@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
-<body>
+<body data-page="morgonpage">
     <header>
-        <h1>Att göra lista:</h1>
-        <h3> Morgon</h3>
+        <nav class="headerNav">
+            <img src="/Materials/user logo.png" alt="UserLogo" class="userImg">
+            <h1 class="currentUser">Mathilda</h1>
+        </nav>
     </header>
 
     <main>
@@ -39,11 +42,27 @@
                     <h2>Packa väskan</h2>
                     <input type="checkbox" id="checkBoxSix" name="checkBoxSix">
                 </figure>
+                <figure class="taskcontainer_block">
+                    <h2>Packa väskan</h2>
+                    <input type="checkbox" id="checkBoxSix" name="checkBoxSix">
+                </figure>
+                <figure class="taskcontainer_block">
+                    <h2>Packa väskan</h2>
+                    <input type="checkbox" id="checkBoxSix" name="checkBoxSix">
+                </figure>
+                <figure class="taskcontainer_block">
+                    <h2>Packa väskan</h2>
+                    <input type="checkbox" id="checkBoxSix" name="checkBoxSix">
+                </figure>
             </section>
         </section>
+        <button>Nollställ</button> 
     </main>
-    <footer>
-        <button>Nollställ</button>     
+    <footer>   
+        <nav class="footerNav">
+            <a href="index.html">Tjäna pengar</a>
+            <a href="todolist.html">Morgonlistan</a>
+        </nav> 
     </footer>
 </body>
 </html>

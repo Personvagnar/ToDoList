@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body data-page="nathaliapage">
+    <header>
+        <nav class="headerNav">
+            <img src="/Materials/user logo.png" alt="UserLogo" class="userImg">
+            <h1 class="currentUser">Nathalia</h1>
+        </nav>
+    </header>
+
+    <main>
+        <section class="tasksection">
+            <section class="profilesection_card">
+
+                <h2 class="profilesection_cardheadline">Intjänat denna veckan:</h2>
+                <p id="earnedAmount"></p>
+            </section>
+            <section class="profilesection_card">
+
+                <h2 class="profilesection_cardheadline">Veckans sysslor gjorda?</h2>
+                <label>
+                    <input type="checkbox" id="sysslorCheckBox">
+                    Japp!
+                </label>
+            </section>
+            <section class="profilesection_card">
+
+                <h2 class="profilesection_cardheadline">Nollställ veckan</h2>
+                <button id="resetAmountBtn"></button>
+            </section>
+        </section>
+    </main>
+
+    <footer>  
+        <nav class="footerNav">
+            <a href="indexN.html">Tjäna pengar</a>
+            <a href="todolist.html">Morgonlistan</a>
+        </nav>
+    </footer>
+</body>
+</html>
