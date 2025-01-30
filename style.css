@@ -2,12 +2,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background: linear-gradient(to top right, rgb(26, 202, 233), rgb(138, 207, 219));
+    background: linear-gradient(to top right, rgb(23, 173, 199), rgba(109, 216, 235, 0.842));
 }
 header {
     display: flex;
     width: 100%;
-    background: transparent;
     height: 6rem;
     background: #f1f1f1;
     box-shadow: 0px 1px 3px rgb(15, 15, 15);
@@ -52,16 +51,33 @@ main {
     transition: margin-top 0.3 ease;
 }
 footer {
-    border: 2px solid pink;
     width: 100%;
+    height: 4rem;
     position: fixed;
+    display: flex;
+    justify-content: center;
     bottom: 0;
     left: 0;
+    background: linear-gradient(to top, #e9e9e9, #f1f1f1);
+    box-shadow: 0px -1px 3px rgba(15, 15, 15, 0.5);
+    border-radius: 10px 10px 0px 0px;
 }
 .footerNav {
     display: flex;
+    width: 80%;
     justify-content: space-between;
     padding: 1rem;
+}
+.footerNav a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: rgb(15, 15, 15);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 1rem;
+    background: linear-gradient(to top right, rgba(26, 202, 233, 0.418), rgb(138, 207, 219));
 }
 .tasksection {
     display: grid;
@@ -71,54 +87,88 @@ footer {
     gap: 1em;
     justify-items: center;
 }
-.tasksection_card {
-    display: grid;
-    grid-template-columns: 50% 20% 30%;
-    grid-template-rows: auto;
-    width: 80%;
-    height: auto;
-    background: #f1f1f1;
-    box-shadow: 0px 1px 10px rgb(15, 15, 15, 0.5);
-    border-radius: 5px;
-}
-.tasksection_card h2 {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%;
-    align-self: center;
-    padding-left: 1rem;
-}
-.tasksection_card p {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    align-self: center;
-    height: 100%;
-    font-style: italic;
-}
-.tasksection_card_Btnlayout {
+.cardcontainer {
     display: flex;
     flex-direction: column;
+    width: 80%;
+    height: auto;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: 100%;
-    align-self: center;
-    justify-self: center;
 }
+.tasksection_card {
+    display: flex;
+    width: 100%;
+    height: 4rem;
+    padding: 1rem;
+    background: #f1f1f1;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.tasksection_card h2 {
+    height: 100%;
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: flex-start;
+    display: flex;
+}
+.tasksection_card p {
+    height: 100%;
+    width: 25%;
+    padding: 0;
+    margin: 0;
+    align-items: flex-end;
+    justify-content: flex-end;
+    display: flex;
+}
+.tasksection_card--italic {
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.tasksection_card--rightsidealigned {
+    text-align: end;
+}
+.tasksection_card_Btnlayout {
+    background: #f1f1f1;
+    height: auto;
+    width: 80%;
+    margin: 0;
+    justify-content: space-evenly;
+    display: none;
+    padding: 0.5rem;
+    border-radius: 0px 0px 5px 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+.tasksection_card_Btnlayout.active {
+    display: flex;
+
+}
+.tasksection_cardBtn img, .tasksection_cardBtn--red img {
+    width: 40px;
+    height: auto;
+} 
 .tasksection_cardBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     border: none;
     box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
-    margin-top: 1rem;
     background: rgb(128, 123, 123);
     transition: box-shadow 0.3s ease;
 }
 .tasksection_cardBtn--red {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    background: rgb(128, 123, 123);
     transition: box-shadow 0.3s ease;
-    margin-bottom: 1rem;
-    margin-top: -1rem;
 }
 .tasksection_cardBtn.active {
     background: linear-gradient(to top, rgb(7, 165, 7), rgb( 32,255,32));
@@ -128,13 +178,11 @@ footer {
     background: linear-gradient(to top, rgb(165, 7, 7), rgb(252, 0, 0));
     box-shadow: 1px 1px 5px rgb(139, 139, 19);
 }
-.tasksection_cardBtn img {
-    width: 40px;
-    height: auto;
-}
+
 .profilesection_card {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 80%;
     height: auto;
     background: #f1f1f1;
@@ -142,11 +190,25 @@ footer {
     box-shadow: 0px 1px 10px rgb(15, 15, 15, 0.5);
     border-radius: 5px;
 }
+#sysslorCheckBox {
+    width: 50px;
+    height: 50px;
+}
+.cardcontainer--resetcard {
+    display: none;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    align-items: center;    
+}
+.cardcontainer--resetcard.active {
+    display: flex;
+}
 #resetAmountBtn {
-    background: linear-gradient(to top, rgb(161, 82, 8), rgba(182, 23, 12, 0.801));
-    border: 2px solid black;
+    background: linear-gradient(to top, rgb(255, 1, 1), rgba(255, 17, 0, 0.856));
+    border: 2px solid rgba(0, 0, 0, 0.5);
     box-shadow: none;
-    border-radius: 5px;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
     align-self: center;
